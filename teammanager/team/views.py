@@ -8,27 +8,6 @@ from team.models import Teammembers
 from team.serializers import TeamSerializer
 
 
-
-# @api_view(['GET'])
-# def team_members_list(request):
-#     if request.method == 'GET':
-#         team_members = Teammembers.objects.all()
-#         serializer = TeamSerializer(team_members, many=True)
-#         return Response(serializer.data)
-
-
-# @api_view(['GET'])
-# def get_team_member(request, pk):
-#     try:
-#         team_member = Teammembers.objects.get(pk=pk)
-#     except Teammembers.DoesNotExist:
-#         return HttpResponse(status=404)
-
-#     if request.method == 'GET':
-#         serializer = TeamSerializer(team_member)
-#         return Response(serializer.data)
-
-
 class TeamDataList(generics.ListCreateAPIView):
     """
     Teammembers List View class to list all the active Teammembers objects
